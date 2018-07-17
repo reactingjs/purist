@@ -1,0 +1,108 @@
+{
+  "name": "@reacting/purist",
+  "version": "0.0.1",
+  "main": "public/purist/bundle.js",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT ",
+  "scripts": {
+    "init": "yarn && cd sandbox && yarn",
+    "test": "babel-node node_modules/.bin/jest",
+    "build": "rollup --config ./rollup.config.js",
+    "build.watch": "yarn build --watch",
+    "sandbox": "cd sandbox && yarn start"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.0.0-beta.49",
+    "@babel/core": "7.0.0-beta.49",
+    "@babel/node": "7.0.0-beta.49",
+    "@babel/plugin-proposal-export-default-from": "7.0.0-beta.49",
+    "@babel/plugin-transform-runtime": "7.0.0-beta.49",
+    "@babel/preset-env": "7.0.0-beta.49",
+    "@babel/preset-flow": "7.0.0-beta.49",
+    "@babel/preset-react": "7.0.0-beta.49",
+    "@babel/runtime": "7.0.0-beta.49",
+    "@copart/babel-preset-ops-core": "1.0.0",
+    "autoprefixer": "8.6.3",
+    "babel-jest": "23.0.1",
+    "babel-loader": "8.0.0-beta.3",
+    "babel-plugin-jsx-control-statements": "3.2.8",
+    "babel-plugin-module-resolver": "3.1.1",
+    "babel-plugin-react-css-modules": "3.4.2",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "23.0.1",
+    "jest-extended": "0.7.2",
+    "jest-localstorage-mock": "2.2.0",
+    "node-sass": "4.9.0",
+    "postcss": "6.0.22",
+    "postcss-modules": "1.1.0",
+    "react-hot-loader": "4.3.3",
+    "rollup": "0.59.4",
+    "rollup-plugin-babel": "4.0.0-beta.4",
+    "rollup-plugin-commonjs": "9.1.3",
+    "rollup-plugin-filesize": "1.5.0",
+    "rollup-plugin-image": "1.0.2",
+    "rollup-plugin-node-resolve": "3.3.0",
+    "rollup-plugin-postcss": "1.6.2",
+    "rollup-plugin-progress": "0.4.0"
+  },
+  "peerDependencies": {
+    "react": "15.6.2",
+    "react-dom": "15.6.2"
+  },
+  "dependencies": {
+    "@copart/core-components": "0.2.6",
+    "@copart/ops-local-storage": "0.0.1",
+    "axios": "0.18.0",
+    "babel-plugin-dev-expression": "0.2.1",
+    "fast-stable-stringify": "1.0.0",
+    "flat": "4.0.0",
+    "invariant": "2.2.4",
+    "json-parse-safe": "1.0.5",
+    "kind-of": "6.0.2",
+    "material-components-web": "0.35.2",
+    "mitt": "1.1.3",
+    "muicss": "0.9.39",
+    "ramda": "0.25.0",
+    "react-fast-compare": "^2.0.1",
+    "react-ripples": "1.1.2",
+    "react-tap-event-plugin": "2.0.1",
+    "rmwc": "1.6.4",
+    "rollup-plugin-img": "1.1.0",
+    "uuid": "3.2.1",
+    "warning": "4.0.1"
+  },
+  "author": {
+    "name": "Colton Colcleasure",
+    "email": "colshacol@gmail.com"
+  },
+  "repository": {
+    "git": "https://github.com/reactingjs/purist"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./jest/setup.js",
+    "automock": false,
+    "browser": true,
+    "verbose": true,
+    "silent": false,
+    "testMatch": [
+      "**/_tests/*.t.js"
+    ],
+    "setupFiles": [
+      "jest-localstorage-mock",
+      "./jest/setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/.remmy/",
+      "<rootDir>/old-src/"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|svg)": "identity-obj-proxy"
+    },
+    "transform": {
+      ".+\\.js$": "<rootDir>/jest/process.js"
+    }
+  }
+}
